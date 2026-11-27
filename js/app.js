@@ -1,4 +1,4 @@
-import { celebrate, shake } from "./animation.js";
+import { celebrate, shake, vibrate } from "./animation.js";
 import { QUIZ_LENGTH, checkAnswer, createGrammarQuestions, createQuiz, createVocabularyQuestions } from "./quizEngine.js";
 import { createReviewQuestions } from "./reviewEngine.js";
 import { getLevel, getSettings, getStats, getWrongQuestions, recordAnswer, saveSettings, saveStats, saveWrongQuestions } from "./storage.js";
@@ -217,8 +217,10 @@ function submitAnswer(answer, selectedButton) {
     if (correct) state.correctAnswers += 1;
     updateStats();
     selectedButton.classList.add(correct ? "is-correct" : "is-wrong");
-    if (correct) celebrate(selectedButton);
-    else shake(selectedButton);
+    if (correct) {
+      celebrate(selectedButton);
+      vibrate([60, 40, 60]);
+    } else shake(selectedButton);
 
     [...elements.choices.children].forEach((button) => {
       button.disabled = true;
@@ -286,6 +288,7 @@ function showResults() {
   elements.resultScore.textContent = `${state.questions.length}問中 ${state.correctAnswers}問正解`;
   elements.resultXp.textContent = `今回の獲得 XP：${state.sessionXp + bonus} XP`;
   elements.progressBar.style.width = "100%";
+  vibrate(perfect ? [100, 50, 100, 50, 100, 50, 250] : [80, 50, 80]);
   elements.progressTrack.setAttribute("aria-valuenow", String(state.questions.length));
 }
 
