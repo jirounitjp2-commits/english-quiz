@@ -111,6 +111,7 @@ h2 { margin-bottom: 0; font-size: 20px; letter-spacing: -.5px; }
 .app-message { min-height: 20px; margin: 10px 3px 0; color: #74809b; font-size: 11px; }
 .app-message.is-error { color: #c34f59; }
 footer { margin-top: 15px; color: #9aa2b6; text-align: center; font-size: 11px; }
+.test-button { display: block; margin: 8px auto 0; padding: 8px 16px; border: 2px dashed #ffc2da; border-radius: 999px; background: #fff; color: #e0568d; cursor: pointer; font-size: 12px; font-weight: 700; }
 
 .celebrate { animation: pop .38s ease; }
 .shake { animation: shake .32s ease; }

@@ -3,6 +3,7 @@ import { QUIZ_LENGTH, checkAnswer, createGrammarQuestions, createQuiz, createVoc
 import { createReviewQuestions } from "./reviewEngine.js";
 import { getLevel, getSettings, getStats, getWrongQuestions, recordAnswer, saveSettings, saveStats, saveWrongQuestions } from "./storage.js";
 import { speak, unlockSpeech } from "./speech.js";
+import { playEffect, unlockAudio } from "./sound.js";
 
 const $ = (selector) => document.querySelector(selector);
 const elements = {
@@ -36,6 +37,7 @@ const elements = {
   soundToggle: $("#sound-toggle"),
   soundIcon: $("#sound-icon"),
   reviewCount: $("#review-count"),
+  testButton: $("#device-test"),
   mascot: $(".mascot"),
 };
 
@@ -220,7 +222,11 @@ function submitAnswer(answer, selectedButton) {
     if (correct) {
       celebrate(selectedButton);
       vibrate([60, 40, 60]);
-    } else shake(selectedButton);
+      if (state.settings.sound) playEffect("correct");
+    } else {
+      shake(selectedButton);
+      if (state.settings.sound) playEffect("wrong");
+    }
 
     [...elements.choices.children].forEach((button) => {
       button.disabled = true;
@@ -267,6 +273,35 @@ function submitAnswer(answer, selectedButton) {
   }
 }
 
+// 更新による再読み込みは1セッションに1回だけにする
+function consumeReloadFlag() {
+  try {
+    if (sessionStorage.getItem("swReloaded")) return true;
+    sessionStorage.setItem("swReloaded", "1");
+  } catch {
+    return true;
+  }
+  return false;
+}
+
+function runDeviceTest() {
+  const results = [];
+  const soundOk = playEffect("clear");
+  results.push(soundOk ? "効果音：再生しました（聞こえない場合はマナーモードと音量を確認）" : "効果音：この端末では使えません");
+  try {
+    speak("Hello! Let's study English.", {
+      onError: () => showMessage("読み上げ：再生に失敗しました。英語の音声データを確認してね。", true),
+    });
+    results.push("読み上げ：送信しました");
+  } catch (error) {
+    results.push(`読み上げ：${error.message}`);
+  }
+  const canVibrate = typeof navigator.vibrate === "function";
+  if (canVibrate) vibrate([200, 100, 200]);
+  results.push(canVibrate ? "バイブ：送信しました（機種や設定によっては振動しません）" : "バイブ：このブラウザーは非対応です（iPhoneのSafariは非対応）");
+  showMessage(results.join(" ／ "));
+}
+
 function showResults() {
   const perfect = state.correctAnswers === state.questions.length;
   let bonus = 0;
@@ -289,6 +324,7 @@ function showResults() {
   elements.resultXp.textContent = `今回の獲得 XP：${state.sessionXp + bonus} XP`;
   elements.progressBar.style.width = "100%";
   vibrate(perfect ? [100, 50, 100, 50, 100, 50, 250] : [80, 50, 80]);
+  if (state.settings.sound) playEffect("clear");
   elements.progressTrack.setAttribute("aria-valuenow", String(state.questions.length));
 }
 
@@ -344,7 +380,8 @@ async function initialize() {
         });
       });
     });
-    document.addEventListener("pointerdown", unlockSpeech, { once: true });
+    document.addEventListener("pointerdown", () => { unlockSpeech(); unlockAudio(); }, { once: true });
+    elements.testButton.addEventListener("click", runDeviceTest);
     elements.speakButton.addEventListener("click", playQuestionAudio);
     elements.soundToggle.addEventListener("click", () => {
       try {
@@ -358,6 +395,11 @@ async function initialize() {
       }
     });
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
+      // 古い版が動いていた場合、新しい版に切り替わったら一度だけ読み込み直す
+      const hadController = Boolean(navigator.serviceWorker.controller);
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (hadController && !elements.startPanel.hidden && !consumeReloadFlag()) location.reload();
+      });
       navigator.serviceWorker.register("./sw.js").catch((error) => {
         showMessage(`オフライン機能を有効にできませんでした: ${error.message}`, true);
       });

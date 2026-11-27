@@ -1,4 +1,4 @@
-const CACHE_NAME = "english-quiz-v10";
+const CACHE_NAME = "english-quiz-v12";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -9,6 +9,7 @@ const APP_SHELL = [
   "./js/reviewEngine.js",
   "./js/storage.js",
   "./js/speech.js",
+  "./js/sound.js",
   "./js/animation.js",
   "./data/grammar.json",
   "./data/vocabulary.json",
@@ -22,7 +23,7 @@ const APP_SHELL = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(APP_SHELL))
+      .then((cache) => cache.addAll(APP_SHELL.map((url) => new Request(url, { cache: "reload" }))))
       .then(() => self.skipWaiting()),
   );
 });
@@ -35,15 +36,16 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+// 通信できるときは常に最新を取得し、オフライン時だけキャッシュを使う
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) return;
   event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+    fetch(event.request, { cache: "no-cache" }).then((response) => {
       if (response.ok) {
         const copy = response.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
       }
       return response;
-    })),
+    }).catch(() => caches.match(event.request)),
   );
 });
