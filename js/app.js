@@ -324,7 +324,7 @@ function showResults() {
   elements.resultXp.textContent = `今回の獲得 XP：${state.sessionXp + bonus} XP`;
   elements.progressBar.style.width = "100%";
   vibrate(perfect ? [100, 50, 100, 50, 100, 50, 250] : [80, 50, 80]);
-  if (state.settings.sound) playEffect("clear");
+  if (state.settings.sound) playEffect(perfect ? "perfect" : "clear");
   elements.progressTrack.setAttribute("aria-valuenow", String(state.questions.length));
 }
 
