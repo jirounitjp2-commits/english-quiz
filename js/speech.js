@@ -37,10 +37,12 @@ export function speak(text, { lang = "en-US", rate = 0.85, onError } = {}) {
     synth.resume();
     synth.speak(utterance);
   };
+  const needsDelay = /Android/i.test(navigator.userAgent);
   if (synth.speaking || synth.pending) {
     synth.cancel();
-    // Android Chrome では cancel 直後の speak が無視されることがある
-    setTimeout(start, 120);
+    // Android Chrome は cancel 直後の speak が無視される。iOS は遅らせるとタップ操作扱いでなくなり無音になる
+    if (needsDelay) setTimeout(start, 120);
+    else start();
   } else {
     start();
   }
