@@ -192,14 +192,10 @@ function renderQuestion() {
 function playQuestionAudio() {
   const question = state.questions[state.questionIndex];
   if (!question?.speechText) return;
-  try {
-    speak(question.speechText, {
-      onError: () => showMessage("音声を再生できませんでした。端末の音量・マナーモード・英語の音声データを確認してね。", true),
-    });
-    showMessage("");
-  } catch (error) {
-    showMessage(error.message, true);
-  }
+  speak(question.speechText, {
+    onError: () => showMessage("音声を再生できませんでした。端末の音量・マナーモードを確認してね。", true),
+  });
+  showMessage("");
 }
 
 function submitAnswer(answer, selectedButton) {
@@ -289,10 +285,10 @@ function runDeviceTest() {
   const soundOk = playEffect("clear");
   results.push(soundOk ? "効果音：再生しました（聞こえない場合はマナーモードと音量を確認）" : "効果音：この端末では使えません");
   try {
-    speak("Hello! Let's study English.", {
-      onError: () => showMessage("読み上げ：再生に失敗しました。英語の音声データを確認してね。", true),
+    speak("hello", {
+      onError: () => showMessage("読み上げ：再生に失敗しました。音量・マナーモードを確認してね。", true),
     });
-    results.push("読み上げ：送信しました");
+    results.push("読み上げ：「hello」を再生しました（聞こえない場合はマナーモードと音量を確認）");
   } catch (error) {
     results.push(`読み上げ：${error.message}`);
   }

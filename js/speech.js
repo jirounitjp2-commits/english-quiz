@@ -8,16 +8,45 @@ let unlocked = false;
 
 // iOS などは、ユーザーのタップ内で一度しゃべらせないと以降の音声が出ない
 export function unlockSpeech() {
-  if (unlocked || !("speechSynthesis" in window)) return;
+  // iOS は録音済み音声を使うので、無音の読み上げで音声系統を占有しない
+  if (unlocked || !("speechSynthesis" in window) || /iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
   unlocked = true;
   const utterance = new SpeechSynthesisUtterance(" ");
   utterance.volume = 0;
   window.speechSynthesis.speak(utterance);
 }
 
-export function speak(text, { lang = "en-US", rate = 0.85, onError } = {}) {
+let wordAudio = null;
+
+// 単語は録音済みの音声ファイルを再生する（iPhone では Web Speech が不安定なため）
+function playRecorded(text, onFallback) {
+  if (!/^[a-z]+$/i.test(text)) return false;
+  try {
+    wordAudio?.pause();
+    const audio = new Audio(`./audio/words/${text.toLowerCase()}.mp3`);
+    wordAudio = audio;
+    audio.volume = 1;
+    audio.addEventListener("error", onFallback, { once: true });
+    const promise = audio.play();
+    promise?.catch((error) => {
+      if (error?.name !== "AbortError") onFallback();
+    });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function speak(text, options = {}) {
+  const fallback = () => speakWithSynth(text, options);
+  if (playRecorded(text, fallback)) return;
+  fallback();
+}
+
+function speakWithSynth(text, { lang = "en-US", rate = 0.85, onError } = {}) {
   if (!("speechSynthesis" in window)) {
-    throw new Error("このブラウザーは音声読み上げに対応していません。");
+    onError?.("not-supported");
+    return;
   }
   const synth = window.speechSynthesis;
   const utterance = new SpeechSynthesisUtterance(text);
@@ -49,5 +78,6 @@ export function speak(text, { lang = "en-US", rate = 0.85, onError } = {}) {
 }
 
 export function stopSpeaking() {
+  wordAudio?.pause();
   if ("speechSynthesis" in window) window.speechSynthesis.cancel();
 }

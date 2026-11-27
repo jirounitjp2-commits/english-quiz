@@ -1,4 +1,4 @@
-const CACHE_NAME = "english-quiz-v13";
+const CACHE_NAME = "english-quiz-v14";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -38,7 +38,10 @@ self.addEventListener("activate", (event) => {
 
 // 通信できるときは常に最新を取得し、オフライン時だけキャッシュを使う
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) return;
+  const url = new URL(event.request.url);
+  if (event.request.method !== "GET" || url.origin !== self.location.origin) return;
+  // 音声は Range リクエストを使うので Service Worker を通さずブラウザーに任せる
+  if (url.pathname.includes("/audio/") || event.request.headers.has("range")) return;
   event.respondWith(
     fetch(event.request, { cache: "no-cache" }).then((response) => {
       if (response.ok) {
