@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "type": "grammar",
+    "unit": "be動詞",
+    "question": "I ___ a student.",
+    "choices": ["am", "is", "are", "be"],
+    "answer": 0,
+    "explanation": "主語が I のとき、be動詞は am を使います。"
+  },
+  {
+    "id": 2,
+    "type": "grammar",
+    "unit": "be動詞",
+    "question": "You ___ kind.",
+    "choices": ["am", "is", "are", "be"],
+    "answer": 2,
+    "explanation": "主語が you のとき、be動詞は are を使います。"
+  },
+  {
+    "id": 3,
+    "type": "grammar",
+    "unit": "be動詞",
+    "question": "This ___ my book.",
+    "choices": ["am", "is", "are", "be"],
+    "answer": 1,
+    "explanation": "主語が this のとき、be動詞は is を使います。"
+  },
+  {
+    "id": 4,
+    "type": "grammar",
+    "unit": "be動詞",
+    "question": "We ___ good friends.",
+    "choices": ["am", "is", "are", "be"],
+    "answer": 2,
+    "explanation": "主語が we のとき、be動詞は are を使います。"
+  },
+  {
+    "id": 5,
+    "type": "grammar",
+    "unit": "be動詞",
+    "question": "She ___ from Canada.",
+    "choices": ["am", "is", "are", "be"],
+    "answer": 1,
+    "explanation": "主語が she のとき、be動詞は is を使います。"
+  },
+  {
+    "id": 6,
+    "type": "grammar",
+    "unit": "一般動詞",
+    "question": "I ___ soccer after school.",
+    "choices": ["play", "plays", "playing", "am play"],
+    "answer": 0,
+    "explanation": "主語が I の一般動詞は play の形を使います。"
+  },
+  {
+    "id": 7,
+    "type": "grammar",
+    "unit": "一般動詞",
+    "question": "He ___ English every day.",
+    "choices": ["study", "studies", "studying", "is study"],
+    "answer": 1,
+    "explanation": "主語が he の現在形では、study は studies になります。"
+  },
+  {
+    "id": 8,
+    "type": "grammar",
+    "unit": "一般動詞",
+    "question": "They ___ lunch at twelve.",
+    "choices": ["eat", "eats", "eating", "are eat"],
+    "answer": 0,
+    "explanation": "主語が they の一般動詞は eat の形を使います。"
+  },
+  {
+    "id": 9,
+    "type": "grammar",
+    "unit": "疑問文",
+    "question": "___ you like music?",
+    "choices": ["Are", "Do", "Does", "Is"],
+    "answer": 1,
+    "explanation": "一般動詞 like の疑問文は Do you ～? です。"
+  },
+  {
+    "id": 10,
+    "type": "grammar",
+    "unit": "疑問文",
+    "question": "___ he play tennis?",
+    "choices": ["Do", "Is", "Does", "Are"],
+    "answer": 2,
+    "explanation": "主語が he の一般動詞の疑問文は Does で始めます。"
+  },
+  {
+    "id": 11,
+    "type": "grammar",
+    "unit": "否定文",
+    "question": "I ___ like coffee.",
+    "choices": ["don't", "doesn't", "am not", "isn't"],
+    "answer": 0,
+    "explanation": "主語が I の一般動詞の否定文は don't を使います。"
+  },
+  {
+    "id": 12,
+    "type": "grammar",
+    "unit": "否定文",
+    "question": "She ___ speak French.",
+    "choices": ["don't", "doesn't", "isn't", "aren't"],
+    "answer": 1,
+    "explanation": "主語が she の一般動詞の否定文は doesn't を使います。"
+  },
+  {
+    "id": 13,
+    "type": "grammar",
+    "unit": "代名詞",
+    "question": "This is Ken. ___ is my friend.",
+    "choices": ["He", "She", "They", "We"],
+    "answer": 0,
+    "explanation": "Ken は男性なので、代名詞は He です。"
+  },
+  {
+    "id": 14,
+    "type": "grammar",
+    "unit": "代名詞",
+    "question": "I have a dog. ___ name is Pochi.",
+    "choices": ["Its", "It's", "His", "Her"],
+    "answer": 0,
+    "explanation": "動物の持ち主を表す「その」は its です。"
+  },
+  {
+    "id": 15,
+    "type": "grammar",
+    "unit": "複数形",
+    "question": "I have two ___.",
+    "choices": ["cat", "cats", "cates", "cat's"],
+    "answer": 1,
+    "explanation": "ふつうの名詞は複数形にするとき、語尾に s をつけます。"
+  },
+  {
+    "id": 16,
+    "type": "grammar",
+    "unit": "命令文",
+    "question": "___ the window, please.",
+    "choices": ["Open", "Opens", "Opening", "To open"],
+    "answer": 0,
+    "explanation": "命令文は動詞の原形から始めます。"
+  },
+  {
+    "id": 17,
+    "type": "grammar",
+    "unit": "can",
+    "question": "I ___ swim very well.",
+    "choices": ["can", "am", "do", "cans"],
+    "answer": 0,
+    "explanation": "「～できる」は can + 動詞の原形で表します。"
+  },
+  {
+    "id": 18,
+    "type": "grammar",
+    "unit": "疑問詞",
+    "question": "___ is your birthday? — It's in May.",
+    "choices": ["What", "When", "Where", "Who"],
+    "answer": 1,
+    "explanation": "時をたずねる疑問詞は When です。"
+  },
+  {
+    "id": 19,
+    "type": "grammar",
+    "unit": "疑問詞",
+    "question": "___ is that boy? — He is my brother.",
+    "choices": ["What", "When", "Where", "Who"],
+    "answer": 3,
+    "explanation": "人をたずねる疑問詞は Who です。"
+  },
+  {
+    "id": 20,
+    "type": "grammar",
+    "unit": "前置詞",
+    "question": "The book is ___ the desk.",
+    "choices": ["on", "at", "of", "to"],
+    "answer": 0,
+    "explanation": "「机の上に」は on the desk です。"
+  }
+]
