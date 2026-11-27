@@ -1,182 +1,83 @@
 [
-  {
-    "id": 1,
-    "type": "grammar",
-    "unit": "be動詞",
-    "question": "I ___ a student.",
-    "choices": ["am", "is", "are", "be"],
-    "answer": 0,
-    "explanation": "主語が I のとき、be動詞は am を使います。"
-  },
-  {
-    "id": 2,
-    "type": "grammar",
-    "unit": "be動詞",
-    "question": "You ___ kind.",
-    "choices": ["am", "is", "are", "be"],
-    "answer": 2,
-    "explanation": "主語が you のとき、be動詞は are を使います。"
-  },
-  {
-    "id": 3,
-    "type": "grammar",
-    "unit": "be動詞",
-    "question": "This ___ my book.",
-    "choices": ["am", "is", "are", "be"],
-    "answer": 1,
-    "explanation": "主語が this のとき、be動詞は is を使います。"
-  },
-  {
-    "id": 4,
-    "type": "grammar",
-    "unit": "be動詞",
-    "question": "We ___ good friends.",
-    "choices": ["am", "is", "are", "be"],
-    "answer": 2,
-    "explanation": "主語が we のとき、be動詞は are を使います。"
-  },
-  {
-    "id": 5,
-    "type": "grammar",
-    "unit": "be動詞",
-    "question": "She ___ from Canada.",
-    "choices": ["am", "is", "are", "be"],
-    "answer": 1,
-    "explanation": "主語が she のとき、be動詞は is を使います。"
-  },
-  {
-    "id": 6,
-    "type": "grammar",
-    "unit": "一般動詞",
-    "question": "I ___ soccer after school.",
-    "choices": ["play", "plays", "playing", "am play"],
-    "answer": 0,
-    "explanation": "主語が I の一般動詞は play の形を使います。"
-  },
-  {
-    "id": 7,
-    "type": "grammar",
-    "unit": "一般動詞",
-    "question": "He ___ English every day.",
-    "choices": ["study", "studies", "studying", "is study"],
-    "answer": 1,
-    "explanation": "主語が he の現在形では、study は studies になります。"
-  },
-  {
-    "id": 8,
-    "type": "grammar",
-    "unit": "一般動詞",
-    "question": "They ___ lunch at twelve.",
-    "choices": ["eat", "eats", "eating", "are eat"],
-    "answer": 0,
-    "explanation": "主語が they の一般動詞は eat の形を使います。"
-  },
-  {
-    "id": 9,
-    "type": "grammar",
-    "unit": "疑問文",
-    "question": "___ you like music?",
-    "choices": ["Are", "Do", "Does", "Is"],
-    "answer": 1,
-    "explanation": "一般動詞 like の疑問文は Do you ～? です。"
-  },
-  {
-    "id": 10,
-    "type": "grammar",
-    "unit": "疑問文",
-    "question": "___ he play tennis?",
-    "choices": ["Do", "Is", "Does", "Are"],
-    "answer": 2,
-    "explanation": "主語が he の一般動詞の疑問文は Does で始めます。"
-  },
-  {
-    "id": 11,
-    "type": "grammar",
-    "unit": "否定文",
-    "question": "I ___ like coffee.",
-    "choices": ["don't", "doesn't", "am not", "isn't"],
-    "answer": 0,
-    "explanation": "主語が I の一般動詞の否定文は don't を使います。"
-  },
-  {
-    "id": 12,
-    "type": "grammar",
-    "unit": "否定文",
-    "question": "She ___ speak French.",
-    "choices": ["don't", "doesn't", "isn't", "aren't"],
-    "answer": 1,
-    "explanation": "主語が she の一般動詞の否定文は doesn't を使います。"
-  },
-  {
-    "id": 13,
-    "type": "grammar",
-    "unit": "代名詞",
-    "question": "This is Ken. ___ is my friend.",
-    "choices": ["He", "She", "They", "We"],
-    "answer": 0,
-    "explanation": "Ken は男性なので、代名詞は He です。"
-  },
-  {
-    "id": 14,
-    "type": "grammar",
-    "unit": "代名詞",
-    "question": "I have a dog. ___ name is Pochi.",
-    "choices": ["Its", "It's", "His", "Her"],
-    "answer": 0,
-    "explanation": "動物の持ち主を表す「その」は its です。"
-  },
-  {
-    "id": 15,
-    "type": "grammar",
-    "unit": "複数形",
-    "question": "I have two ___.",
-    "choices": ["cat", "cats", "cates", "cat's"],
-    "answer": 1,
-    "explanation": "ふつうの名詞は複数形にするとき、語尾に s をつけます。"
-  },
-  {
-    "id": 16,
-    "type": "grammar",
-    "unit": "命令文",
-    "question": "___ the window, please.",
-    "choices": ["Open", "Opens", "Opening", "To open"],
-    "answer": 0,
-    "explanation": "命令文は動詞の原形から始めます。"
-  },
-  {
-    "id": 17,
-    "type": "grammar",
-    "unit": "can",
-    "question": "I ___ swim very well.",
-    "choices": ["can", "am", "do", "cans"],
-    "answer": 0,
-    "explanation": "「～できる」は can + 動詞の原形で表します。"
-  },
-  {
-    "id": 18,
-    "type": "grammar",
-    "unit": "疑問詞",
-    "question": "___ is your birthday? — It's in May.",
-    "choices": ["What", "When", "Where", "Who"],
-    "answer": 1,
-    "explanation": "時をたずねる疑問詞は When です。"
-  },
-  {
-    "id": 19,
-    "type": "grammar",
-    "unit": "疑問詞",
-    "question": "___ is that boy? — He is my brother.",
-    "choices": ["What", "When", "Where", "Who"],
-    "answer": 3,
-    "explanation": "人をたずねる疑問詞は Who です。"
-  },
-  {
-    "id": 20,
-    "type": "grammar",
-    "unit": "前置詞",
-    "question": "The book is ___ the desk.",
-    "choices": ["on", "at", "of", "to"],
-    "answer": 0,
-    "explanation": "「机の上に」は on the desk です。"
-  }
+  { "id": 1, "type": "grammar", "unit": "be動詞", "question": "I ___ a student.", "choices": ["am", "is", "are", "be"], "answer": 0, "explanation": "主語が I（わたし）のときは、be動詞は am を使います。", "example": "I am a student.（わたしは生徒です。）" },
+  { "id": 2, "type": "grammar", "unit": "be動詞", "question": "You ___ kind.", "choices": ["am", "is", "are", "be"], "answer": 2, "explanation": "主語が you（あなた）のときは are を使います。", "example": "You are kind.（あなたは親切です。）" },
+  { "id": 3, "type": "grammar", "unit": "be動詞", "question": "This ___ my book.", "choices": ["am", "is", "are", "be"], "answer": 1, "explanation": "this / that / he / she / it のように「1人・1つ」の主語には is を使います。", "example": "This is my book.（これはわたしの本です。）" },
+  { "id": 4, "type": "grammar", "unit": "be動詞", "question": "We ___ good friends.", "choices": ["am", "is", "are", "be"], "answer": 2, "explanation": "we（わたしたち）、they（彼ら）のように「2人以上」の主語には are を使います。", "example": "We are good friends.（わたしたちは仲良しです。）" },
+  { "id": 5, "type": "grammar", "unit": "be動詞", "question": "She ___ from Canada.", "choices": ["am", "is", "are", "be"], "answer": 1, "explanation": "she（彼女）は1人なので is を使います。", "example": "She is from Canada.（彼女はカナダ出身です。）" },
+  { "id": 6, "type": "grammar", "unit": "be動詞", "question": "They ___ my classmates.", "choices": ["am", "is", "are", "be"], "answer": 2, "explanation": "they（彼ら・それら）は複数なので are を使います。", "example": "They are my classmates.（彼らはわたしのクラスメイトです。）" },
+  { "id": 7, "type": "grammar", "unit": "be動詞", "question": "Ken ___ a good singer.", "choices": ["am", "is", "are", "be"], "answer": 1, "explanation": "Ken のように人の名前（1人）は he と同じ扱いで is を使います。", "example": "Ken is a good singer.（ケンは歌が上手です。）" },
+  { "id": 8, "type": "grammar", "unit": "be動詞", "question": "My parents ___ teachers.", "choices": ["am", "is", "are", "be"], "answer": 2, "explanation": "parents（両親）は複数なので are を使います。", "example": "My parents are teachers.（わたしの両親は先生です。）" },
+
+  { "id": 9, "type": "grammar", "unit": "一般動詞", "question": "I ___ soccer after school.", "choices": ["play", "plays", "playing", "am play"], "answer": 0, "explanation": "主語が I のときの動詞は、そのままの形（原形）を使います。", "example": "I play soccer after school.（わたしは放課後サッカーをします。）" },
+  { "id": 10, "type": "grammar", "unit": "一般動詞", "question": "We ___ English every day.", "choices": ["studies", "study", "studying", "is study"], "answer": 1, "explanation": "we は複数の主語なので、動詞は原形の study を使います。", "example": "We study English every day.（わたしたちは毎日英語を勉強します。）" },
+  { "id": 11, "type": "grammar", "unit": "一般動詞", "question": "You ___ music.", "choices": ["likes", "like", "liking", "are like"], "answer": 1, "explanation": "you のときも動詞は原形です。be動詞（are）と一般動詞（like）は一緒に使いません。", "example": "You like music.（あなたは音楽が好きです。）" },
+  { "id": 12, "type": "grammar", "unit": "一般動詞", "question": "They ___ in Tokyo.", "choices": ["lives", "live", "living", "is live"], "answer": 1, "explanation": "they は複数なので原形 live を使います。", "example": "They live in Tokyo.（彼らは東京に住んでいます。）" },
+  { "id": 13, "type": "grammar", "unit": "一般動詞", "question": "I ___ a dog.", "choices": ["have", "has", "having", "am have"], "answer": 0, "explanation": "I のときの「持っている」は have です。has は he / she / it のときだけ使います。", "example": "I have a dog.（わたしは犬を飼っています。）" },
+  { "id": 14, "type": "grammar", "unit": "一般動詞", "question": "We ___ breakfast at seven.", "choices": ["eats", "eat", "eating", "are eat"], "answer": 1, "explanation": "we のあとの動詞は原形 eat です。", "example": "We eat breakfast at seven.（わたしたちは7時に朝食を食べます。）" },
+  { "id": 15, "type": "grammar", "unit": "一般動詞", "question": "I ___ to school by bike.", "choices": ["go", "goes", "going", "am go"], "answer": 0, "explanation": "I のときは原形 go です。", "example": "I go to school by bike.（わたしは自転車で学校に行きます。）" },
+  { "id": 16, "type": "grammar", "unit": "一般動詞", "question": "You ___ tennis very well.", "choices": ["plays", "play", "playing", "are play"], "answer": 1, "explanation": "you のあとの動詞は原形 play を使います。", "example": "You play tennis very well.（あなたはとても上手にテニスをします。）" },
+
+  { "id": 17, "type": "grammar", "unit": "三単現のs", "question": "He ___ English every day.", "choices": ["study", "studies", "studying", "is study"], "answer": 1, "explanation": "he / she / it や人の名前（1人）が主語のとき、動詞に s をつけます。study は y を i に変えて es をつけます。", "example": "He studies English every day.（彼は毎日英語を勉強します。）" },
+  { "id": 18, "type": "grammar", "unit": "三単現のs", "question": "My mother ___ breakfast every morning.", "choices": ["make", "makes", "making", "are make"], "answer": 1, "explanation": "My mother は she と同じ「1人」なので make に s をつけます。", "example": "My mother makes breakfast every morning.（母は毎朝朝食を作ります。）" },
+  { "id": 19, "type": "grammar", "unit": "三単現のs", "question": "Mike ___ to school by bus.", "choices": ["go", "goes", "going", "gos"], "answer": 1, "explanation": "go は es をつけて goes になります（o で終わる動詞は es）。", "example": "Mike goes to school by bus.（マイクはバスで学校に行きます。）" },
+  { "id": 20, "type": "grammar", "unit": "三単現のs", "question": "She ___ a cat.", "choices": ["have", "has", "haves", "having"], "answer": 1, "explanation": "have は特別で、三単現では has になります。", "example": "She has a cat.（彼女は猫を飼っています。）" },
+  { "id": 21, "type": "grammar", "unit": "三単現のs", "question": "Yuki ___ the piano.", "choices": ["play", "plays", "playing", "are play"], "answer": 1, "explanation": "Yuki は1人なので、play に s をつけて plays にします。", "example": "Yuki plays the piano.（ユキはピアノをひきます。）" },
+  { "id": 22, "type": "grammar", "unit": "三単現のs", "question": "My father ___ TV after dinner.", "choices": ["watch", "watches", "watchs", "watching"], "answer": 1, "explanation": "watch のように ch で終わる動詞は es をつけます。", "example": "My father watches TV after dinner.（父は夕食後にテレビを見ます。）" },
+
+  { "id": 23, "type": "grammar", "unit": "否定文", "question": "I ___ like tomatoes.", "choices": ["don't", "doesn't", "isn't", "not"], "answer": 0, "explanation": "一般動詞の「〜ない」は、動詞の前に don't を置きます（I / you / we / they のとき）。", "example": "I don't like tomatoes.（わたしはトマトが好きではありません。）" },
+  { "id": 24, "type": "grammar", "unit": "否定文", "question": "She ___ play baseball.", "choices": ["don't", "doesn't", "isn't", "aren't"], "answer": 1, "explanation": "she / he / it のときは doesn't を使い、動詞は原形に戻します。", "example": "She doesn't play baseball.（彼女は野球をしません。）" },
+  { "id": 25, "type": "grammar", "unit": "否定文", "question": "I ___ tired.", "choices": ["am not", "don't", "isn't", "not am"], "answer": 0, "explanation": "be動詞の否定は be動詞のあとに not をつけます。I am の否定は am not です。", "example": "I am not tired.（わたしは疲れていません。）" },
+  { "id": 26, "type": "grammar", "unit": "否定文", "question": "This ___ my pen.", "choices": ["don't", "isn't", "aren't", "doesn't"], "answer": 1, "explanation": "This is の否定は is not = isn't です。", "example": "This isn't my pen.（これはわたしのペンではありません。）" },
+  { "id": 27, "type": "grammar", "unit": "否定文", "question": "They ___ speak Japanese.", "choices": ["don't", "doesn't", "isn't", "aren't"], "answer": 0, "explanation": "they のあとの一般動詞の否定は don't を使います。", "example": "They don't speak Japanese.（彼らは日本語を話しません。）" },
+  { "id": 28, "type": "grammar", "unit": "否定文", "question": "We ___ busy today.", "choices": ["don't", "aren't", "isn't", "doesn't"], "answer": 1, "explanation": "be動詞（are）の否定は aren't（are not）です。", "example": "We aren't busy today.（わたしたちは今日忙しくありません。）" },
+
+  { "id": 29, "type": "grammar", "unit": "疑問文", "question": "___ you like dogs?", "choices": ["Do", "Does", "Are", "Is"], "answer": 0, "explanation": "一般動詞の「〜しますか？」は、文の最初に Do を置きます（you / I / we / they のとき）。", "example": "Do you like dogs?（あなたは犬が好きですか？）" },
+  { "id": 30, "type": "grammar", "unit": "疑問文", "question": "___ he play the guitar?", "choices": ["Do", "Does", "Is", "Are"], "answer": 1, "explanation": "he / she / it のときは Does を使い、動詞は原形（play）のままです。", "example": "Does he play the guitar?（彼はギターをひきますか？）" },
+  { "id": 31, "type": "grammar", "unit": "疑問文", "question": "___ she a teacher?", "choices": ["Do", "Does", "Is", "Are"], "answer": 2, "explanation": "be動詞の疑問文は、be動詞を文の最初に出します。she のときは Is です。", "example": "Is she a teacher?（彼女は先生ですか？）" },
+  { "id": 32, "type": "grammar", "unit": "疑問文", "question": "___ they students?", "choices": ["Do", "Does", "Is", "Are"], "answer": 3, "explanation": "they の be動詞は are なので、Are を文の最初に置きます。", "example": "Are they students?（彼らは生徒ですか？）" },
+  { "id": 33, "type": "grammar", "unit": "疑問文", "question": "___ your sister study English?", "choices": ["Do", "Does", "Is", "Are"], "answer": 1, "explanation": "your sister は she と同じ1人なので Does を使います。", "example": "Does your sister study English?（あなたの妹は英語を勉強しますか？）" },
+  { "id": 34, "type": "grammar", "unit": "疑問文", "question": "___ you hungry?", "choices": ["Do", "Does", "Are", "Is"], "answer": 2, "explanation": "hungry（おなかがすいた）は形容詞なので、be動詞 Are の疑問文になります。", "example": "Are you hungry?（おなかがすいていますか？）" },
+
+  { "id": 35, "type": "grammar", "unit": "疑問詞", "question": "___ is your birthday? － It's May 5.", "choices": ["What", "When", "Where", "Who"], "answer": 1, "explanation": "When は「いつ」と時をたずねる言葉です。答えが日付なので When です。", "example": "When is your birthday?（あなたの誕生日はいつですか？）" },
+  { "id": 36, "type": "grammar", "unit": "疑問詞", "question": "___ do you live? － In Osaka.", "choices": ["What", "When", "Where", "Who"], "answer": 2, "explanation": "Where は「どこ」と場所をたずねます。", "example": "Where do you live?（あなたはどこに住んでいますか？）" },
+  { "id": 37, "type": "grammar", "unit": "疑問詞", "question": "___ is that boy? － He is Tom.", "choices": ["What", "When", "Where", "Who"], "answer": 3, "explanation": "Who は「だれ」と人をたずねます。", "example": "Who is that boy?（あの男の子はだれですか？）" },
+  { "id": 38, "type": "grammar", "unit": "疑問詞", "question": "___ is this? － It's a bag.", "choices": ["What", "When", "Where", "Who"], "answer": 0, "explanation": "What は「何」とものをたずねます。", "example": "What is this?（これは何ですか？）" },
+  { "id": 39, "type": "grammar", "unit": "疑問詞", "question": "___ do you play tennis? － On Sundays.", "choices": ["Who", "Where", "When", "What"], "answer": 2, "explanation": "「日曜日に」と時を答えているので When を使います。", "example": "When do you play tennis?（いつテニスをしますか？）" },
+  { "id": 40, "type": "grammar", "unit": "疑問詞", "question": "___ color do you like? － I like blue.", "choices": ["What", "When", "Where", "Who"], "answer": 0, "explanation": "What color で「何色」という意味になります。", "example": "What color do you like?（何色が好きですか？）" },
+
+  { "id": 41, "type": "grammar", "unit": "複数形", "question": "I have two ___.", "choices": ["book", "books", "bookes", "bookies"], "answer": 1, "explanation": "2つ以上のものは、名前のうしろに s をつけて複数形にします。", "example": "I have two books.（わたしは本を2冊持っています。）" },
+  { "id": 42, "type": "grammar", "unit": "複数形", "question": "There are three ___ on the table.", "choices": ["box", "boxs", "boxes", "boxies"], "answer": 2, "explanation": "x / s / ch / sh で終わる言葉は es をつけます。", "example": "There are three boxes on the table.（テーブルの上に箱が3つあります。）" },
+  { "id": 43, "type": "grammar", "unit": "複数形", "question": "She has two ___.", "choices": ["child", "childs", "children", "childrens"], "answer": 2, "explanation": "child は特別な形で、複数形は children になります。", "example": "She has two children.（彼女には子どもが2人います。）" },
+  { "id": 44, "type": "grammar", "unit": "複数形", "question": "I like these ___.", "choices": ["city", "citys", "cities", "cityes"], "answer": 2, "explanation": "「子音字 + y」で終わる言葉は、y を i に変えて es をつけます。", "example": "I like these cities.（わたしはこれらの都市が好きです。）" },
+  { "id": 45, "type": "grammar", "unit": "複数形", "question": "Look at those ___.", "choices": ["man", "mans", "men", "mens"], "answer": 2, "explanation": "man の複数形は men です（特別な形）。", "example": "Look at those men.（あの男の人たちを見て。）" },
+
+  { "id": 46, "type": "grammar", "unit": "代名詞", "question": "Tom is my friend. ___ is kind.", "choices": ["He", "She", "They", "It"], "answer": 0, "explanation": "男の人は he、女の人は she、ものや動物は it、2人以上は they で言いかえます。", "example": "Tom is my friend. He is kind.（トムは友だちです。彼は親切です。）" },
+  { "id": 47, "type": "grammar", "unit": "代名詞", "question": "This is my pen. I like ___.", "choices": ["it", "they", "he", "she"], "answer": 0, "explanation": "「〜を」の形では、ものは it になります。", "example": "This is my pen. I like it.（これはわたしのペンです。気に入っています。）" },
+  { "id": 48, "type": "grammar", "unit": "代名詞", "question": "That is Ken. Do you know ___?", "choices": ["he", "his", "him", "they"], "answer": 2, "explanation": "know（知っている）のあとは「〜を」の形です。he の「〜を」は him です。", "example": "Do you know him?（あなたは彼を知っていますか？）" },
+  { "id": 49, "type": "grammar", "unit": "代名詞", "question": "This is ___ bag. (わたしの)", "choices": ["I", "my", "me", "mine"], "answer": 1, "explanation": "「わたしの」は my です。名詞（bag）の前に置きます。", "example": "This is my bag.（これはわたしのかばんです。）" },
+  { "id": 50, "type": "grammar", "unit": "代名詞", "question": "Emi and I are friends. ___ are in the same class.", "choices": ["We", "They", "You", "She"], "answer": 0, "explanation": "話している自分も入った複数は we（わたしたち）です。", "example": "We are in the same class.（わたしたちは同じクラスです。）" },
+  { "id": 51, "type": "grammar", "unit": "代名詞", "question": "Please help ___. (わたしを)", "choices": ["I", "my", "me", "mine"], "answer": 2, "explanation": "「わたしを・わたしに」は me です。", "example": "Please help me.（わたしを助けてください。）" },
+
+  { "id": 52, "type": "grammar", "unit": "can", "question": "I ___ swim.", "choices": ["can", "cans", "am can", "do can"], "answer": 0, "explanation": "can は「〜できる」。主語が何でも can の形は変わりません。", "example": "I can swim.（わたしは泳げます。）" },
+  { "id": 53, "type": "grammar", "unit": "can", "question": "She can ___ the piano.", "choices": ["plays", "play", "playing", "to play"], "answer": 1, "explanation": "can のあとの動詞は必ず原形です。s はつけません。", "example": "She can play the piano.（彼女はピアノがひけます。）" },
+  { "id": 54, "type": "grammar", "unit": "can", "question": "I ___ speak French.", "choices": ["can't", "don't", "isn't", "not"], "answer": 0, "explanation": "「〜できない」は can't（cannot）を使います。", "example": "I can't speak French.（わたしはフランス語を話せません。）" },
+  { "id": 55, "type": "grammar", "unit": "can", "question": "___ you run fast?", "choices": ["Do", "Are", "Can", "Does"], "answer": 2, "explanation": "「〜できますか？」は Can を文の最初に置きます。", "example": "Can you run fast?（あなたは速く走れますか？）" },
+  { "id": 56, "type": "grammar", "unit": "can", "question": "Can he cook? － Yes, he ___.", "choices": ["can", "does", "is", "cooks"], "answer": 0, "explanation": "Can の質問には can を使って答えます。", "example": "Yes, he can. / No, he can't.（はい、できます。／いいえ、できません。）" },
+
+  { "id": 57, "type": "grammar", "unit": "命令文", "question": "___ quiet in the library.", "choices": ["Be", "Are", "Is", "Am"], "answer": 0, "explanation": "「〜しなさい」の命令文は動詞の原形で始めます。be動詞の原形は Be です。", "example": "Be quiet in the library.（図書館では静かにしなさい。）" },
+  { "id": 58, "type": "grammar", "unit": "命令文", "question": "___ run in the classroom.", "choices": ["Not", "Don't", "Doesn't", "Aren't"], "answer": 1, "explanation": "「〜してはいけません」は、動詞の前に Don't をつけます。", "example": "Don't run in the classroom.（教室で走ってはいけません。）" },
+  { "id": 59, "type": "grammar", "unit": "命令文", "question": "___ open the door, please.", "choices": ["Opens", "Open", "Opening", "To open"], "answer": 1, "explanation": "命令文は主語を言わず、動詞の原形（open）で始めます。please をつけるとていねいです。", "example": "Open the door, please.（ドアを開けてください。）" },
+  { "id": 60, "type": "grammar", "unit": "命令文", "question": "Let's ___ soccer.", "choices": ["plays", "play", "playing", "to play"], "answer": 1, "explanation": "Let's（〜しよう）のあとも動詞は原形です。", "example": "Let's play soccer.（サッカーをしよう。）" },
+
+  { "id": 61, "type": "grammar", "unit": "前置詞", "question": "I get up ___ six.", "choices": ["in", "on", "at", "by"], "answer": 2, "explanation": "時刻（6時など）には at を使います。", "example": "I get up at six.（わたしは6時に起きます。）" },
+  { "id": 62, "type": "grammar", "unit": "前置詞", "question": "We have a test ___ Monday.", "choices": ["in", "on", "at", "to"], "answer": 1, "explanation": "曜日や日付には on を使います。", "example": "We have a test on Monday.（月曜日にテストがあります。）" },
+  { "id": 63, "type": "grammar", "unit": "前置詞", "question": "My birthday is ___ May.", "choices": ["in", "on", "at", "of"], "answer": 0, "explanation": "月・季節・年には in を使います。", "example": "My birthday is in May.（わたしの誕生日は5月です。）" },
+  { "id": 64, "type": "grammar", "unit": "前置詞", "question": "The cat is ___ the box. (箱の中に)", "choices": ["in", "on", "under", "by"], "answer": 0, "explanation": "in は「〜の中に」、on は「〜の上に」、under は「〜の下に」です。", "example": "The cat is in the box.（猫は箱の中にいます。）" },
+  { "id": 65, "type": "grammar", "unit": "前置詞", "question": "She goes to school ___ bus.", "choices": ["in", "on", "by", "with"], "answer": 2, "explanation": "乗り物を使う方法は by を使います（a や the はつけません）。", "example": "She goes to school by bus.（彼女はバスで学校に行きます。）" },
+
+  { "id": 66, "type": "grammar", "unit": "現在進行形", "question": "I am ___ now.", "choices": ["study", "studies", "studying", "studied"], "answer": 2, "explanation": "「今〜している」は be動詞 + 動詞の ing 形で表します。", "example": "I am studying now.（わたしは今勉強しています。）" },
+  { "id": 67, "type": "grammar", "unit": "現在進行形", "question": "He is ___ soccer.", "choices": ["play", "plays", "playing", "played"], "answer": 2, "explanation": "is のあとは ing 形にします。", "example": "He is playing soccer.（彼はサッカーをしています。）" },
+  { "id": 68, "type": "grammar", "unit": "現在進行形", "question": "They ___ running in the park.", "choices": ["is", "am", "are", "be"], "answer": 2, "explanation": "主語が they なので be動詞は are です。", "example": "They are running in the park.（彼らは公園で走っています。）" },
+  { "id": 69, "type": "grammar", "unit": "現在進行形", "question": "She is ___ a letter.", "choices": ["write", "writeing", "writing", "writes"], "answer": 2, "explanation": "e で終わる動詞は、e をとってから ing をつけます（write → writing）。", "example": "She is writing a letter.（彼女は手紙を書いています。）" },
+  { "id": 70, "type": "grammar", "unit": "現在進行形", "question": "What are you ___?", "choices": ["do", "does", "doing", "done"], "answer": 2, "explanation": "are のあとなので ing 形の doing を使います。", "example": "What are you doing?（あなたは何をしているの？）" }
 ]

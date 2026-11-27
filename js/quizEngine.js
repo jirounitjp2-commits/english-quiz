@@ -1,3 +1,5 @@
+export const QUIZ_LENGTH = 5;
+
 export function shuffle(items) {
   const shuffled = [...items];
   for (let i = shuffled.length - 1; i > 0; i -= 1) {
@@ -32,7 +34,8 @@ export function createVocabularyQuestions(words, mode) {
       answer: correct,
       choices: shuffle([correct, ...distractors]),
       speechText: word.word,
-      explanation: `${word.word}：${word.meaning}`,
+      explanation: `${word.word}（${word.reading}）は「${word.meaning}」という意味です。`,
+      example: word.example,
     };
   });
 }
@@ -47,10 +50,11 @@ export function createGrammarQuestions(questions) {
     answer: question.choices[question.answer],
     choices: question.choices,
     explanation: question.explanation,
+    example: question.example,
   }));
 }
 
-export function createQuiz(questions, limit = 10) {
+export function createQuiz(questions, limit = QUIZ_LENGTH) {
   return shuffle(questions).slice(0, limit);
 }
 

@@ -1,5 +1,5 @@
 import { celebrate, shake } from "./animation.js";
-import { checkAnswer, createGrammarQuestions, createQuiz, createVocabularyQuestions } from "./quizEngine.js";
+import { QUIZ_LENGTH, checkAnswer, createGrammarQuestions, createQuiz, createVocabularyQuestions } from "./quizEngine.js";
 import { createReviewQuestions } from "./reviewEngine.js";
 import { getLevel, getSettings, getStats, getWrongQuestions, recordAnswer, saveSettings, saveStats, saveWrongQuestions } from "./storage.js";
 import { speak } from "./speech.js";
@@ -7,6 +7,7 @@ import { speak } from "./speech.js";
 const $ = (selector) => document.querySelector(selector);
 const elements = {
   tabs: [...document.querySelectorAll(".mode-tab")],
+  gradeTabs: [...document.querySelectorAll(".grade-tab")],
   vocabModes: [...document.querySelectorAll(".vocab-mode")],
   startPanel: $("#start-panel"),
   questionPanel: $("#question-panel"),
@@ -35,11 +36,15 @@ const elements = {
   soundToggle: $("#sound-toggle"),
   soundIcon: $("#sound-icon"),
   reviewCount: $("#review-count"),
+  mascot: $(".mascot"),
 };
 
 const state = {
   grammar: [],
   vocabulary: [],
+  allGrammar: [],
+  allVocabulary: [],
+  grade: 1,
   mode: "grammar",
   vocabularyMode: "meaning",
   questions: [],
@@ -83,8 +88,8 @@ function setMode(mode) {
   });
 
   const descriptions = {
-    grammar: ["文法クイズ", "中学1年生の英文法にチャレンジしよう！"],
-    vocabulary: ["単語クイズ", "単語の意味や読み方を楽しく覚えよう！"],
+    grammar: ["文法クイズ", `中学${state.grade}年生の英文法にチャレンジしよう！`],
+    vocabulary: ["単語クイズ", `中学${state.grade}年生の単語の意味や読み方を楽しく覚えよう！`],
     review: ["まちがい復習", "まちがえた問題にもう一度チャレンジ！"],
   };
   [elements.startTitle.textContent, elements.startDescription.textContent] = descriptions[mode];
@@ -102,8 +107,22 @@ function setMode(mode) {
   }
   elements.questionCount.textContent = mode === "review"
     ? `${reviewLength}問`
-    : "全10問";
+    : `全${QUIZ_LENGTH}問`;
   showMessage("");
+}
+
+function setGrade(grade) {
+  state.grade = grade;
+  state.grammar = state.gradeData[grade].grammar;
+  state.vocabulary = state.gradeData[grade].vocabulary;
+  document.body.dataset.grade = String(grade);
+  elements.mascot.textContent = { 1: "🦊", 2: "🐰", 3: "🦄" }[grade];
+  elements.gradeTabs.forEach((tab) => {
+    const selected = Number(tab.dataset.grade) === grade;
+    tab.classList.toggle("is-active", selected);
+    tab.setAttribute("aria-pressed", String(selected));
+  });
+  setMode(state.mode);
 }
 
 function buildQuestionSet() {
@@ -113,7 +132,7 @@ function buildQuestionSet() {
   if (state.mode === "vocabulary") {
     return createQuiz(createVocabularyQuestions(state.vocabulary, state.vocabularyMode));
   }
-  return createReviewQuestions(state.grammar, state.vocabulary, getWrongQuestions());
+  return createReviewQuestions(state.allGrammar, state.allVocabulary, getWrongQuestions());
 }
 
 function startQuiz() {
@@ -207,12 +226,25 @@ function submitAnswer(answer, selectedButton) {
     elements.feedback.hidden = false;
     elements.feedback.className = `answer-feedback ${correct ? "is-correct" : "is-wrong"}`;
     const feedbackTitle = document.createElement("strong");
-    feedbackTitle.textContent = correct ? "正解！すばらしい！" : `おしい！正解は ${question.answer}`;
+    feedbackTitle.textContent = correct ? "🎉 正解！すばらしい！" : "😢 おしい！もう一度おぼえよう";
     elements.feedback.replaceChildren(feedbackTitle);
+    if (!correct) {
+      const answerLine = document.createElement("span");
+      answerLine.className = "feedback-answer";
+      answerLine.textContent = `あなたの答え：${answer}　→　正解：${question.answer}`;
+      elements.feedback.append(answerLine);
+    }
     if (question.explanation) {
       const explanation = document.createElement("span");
-      explanation.textContent = question.explanation;
+      explanation.className = "feedback-explanation";
+      explanation.textContent = `💡 ${question.explanation}`;
       elements.feedback.append(explanation);
+    }
+    if (question.example) {
+      const example = document.createElement("span");
+      example.className = "feedback-example";
+      example.textContent = `📝 例文：${question.example}`;
+      elements.feedback.append(example);
     }
     if (correct && result.leveledUp) {
       const levelUp = document.createElement("span");
@@ -267,22 +299,28 @@ function nextQuestion() {
 
 async function initialize() {
   try {
-    const [grammarResponse, vocabularyResponse] = await Promise.all([
-      fetch("./data/grammar.json"),
-      fetch("./data/vocabulary.json"),
-    ]);
-    if (!grammarResponse.ok || !vocabularyResponse.ok) {
+    const grades = [1, 2, 3];
+    const suffix = (grade) => (grade === 1 ? "" : String(grade));
+    const responses = await Promise.all(grades.flatMap((grade) => [
+      fetch(`./data/grammar${suffix(grade)}.json`),
+      fetch(`./data/vocabulary${suffix(grade)}.json`),
+    ]));
+    if (responses.some((response) => !response.ok)) {
       throw new Error("問題データを読み込めませんでした。");
     }
-    [state.grammar, state.vocabulary] = await Promise.all([
-      grammarResponse.json(),
-      vocabularyResponse.json(),
-    ]);
+    const loaded = await Promise.all(responses.map((response) => response.json()));
+    state.gradeData = {};
+    grades.forEach((grade, index) => {
+      state.gradeData[grade] = { grammar: loaded[index * 2], vocabulary: loaded[index * 2 + 1] };
+    });
+    state.allGrammar = grades.flatMap((grade) => state.gradeData[grade].grammar);
+    state.allVocabulary = grades.flatMap((grade) => state.gradeData[grade].vocabulary);
     state.settings = getSettings();
     elements.soundIcon.textContent = state.settings.sound ? "🔊" : "🔈";
     elements.soundToggle.setAttribute("aria-label", state.settings.sound ? "音声をオフにする" : "音声をオンにする");
     updateStats();
-    setMode("grammar");
+    setGrade(1);
+    elements.gradeTabs.forEach((tab) => tab.addEventListener("click", () => setGrade(Number(tab.dataset.grade))));
     elements.startButton.addEventListener("click", startQuiz);
     elements.nextButton.addEventListener("click", nextQuestion);
     elements.againButton.addEventListener("click", () => {

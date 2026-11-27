@@ -1,4 +1,4 @@
-const CACHE_NAME = "english-quiz-v2";
+const CACHE_NAME = "english-quiz-v5";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -12,6 +12,10 @@ const APP_SHELL = [
   "./js/animation.js",
   "./data/grammar.json",
   "./data/vocabulary.json",
+  "./data/grammar2.json",
+  "./data/vocabulary2.json",
+  "./data/grammar3.json",
+  "./data/vocabulary3.json",
   "./assets/icon.svg",
 ];
 
