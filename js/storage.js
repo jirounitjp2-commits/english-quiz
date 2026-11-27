@@ -12,9 +12,36 @@ const EMPTY_STATS = {
   lastStudyDate: null,
 };
 
+const memoryStore = new Map();
+
+// プライベートブラウズ等で localStorage が使えない場合は、メモリ上に保存する
+const storage = {
+  getItem(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return memoryStore.has(key) ? memoryStore.get(key) : null;
+    }
+  },
+  setItem(key, value) {
+    memoryStore.set(key, value);
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // メモリ保存のみで続行する
+    }
+  },
+};
+
 function read(key, fallback) {
-  const value = localStorage.getItem(key);
-  if (value !== null) return JSON.parse(value);
+  let value = storage.getItem(key);
+  let parsed = null;
+  try {
+    parsed = value === null ? null : JSON.parse(value);
+  } catch {
+    value = null;
+  }
+  if (value !== null) return parsed;
   if (Array.isArray(fallback)) return [...fallback];
   if (fallback && typeof fallback === "object") return { ...fallback };
   return fallback;
@@ -32,7 +59,7 @@ export function getStats() {
 }
 
 export function saveStats(stats) {
-  localStorage.setItem(KEYS.stats, JSON.stringify(stats));
+  storage.setItem(KEYS.stats, JSON.stringify(stats));
 }
 
 export function getWrongQuestions() {
@@ -40,7 +67,7 @@ export function getWrongQuestions() {
 }
 
 export function saveWrongQuestions(ids) {
-  localStorage.setItem(KEYS.wrong, JSON.stringify([...new Set(ids)]));
+  storage.setItem(KEYS.wrong, JSON.stringify([...new Set(ids)]));
 }
 
 export function getSettings() {
@@ -48,7 +75,7 @@ export function getSettings() {
 }
 
 export function saveSettings(settings) {
-  localStorage.setItem(KEYS.settings, JSON.stringify(settings));
+  storage.setItem(KEYS.settings, JSON.stringify(settings));
 }
 
 export function getLevel(xp) {
@@ -76,3 +103,4 @@ export function recordAnswer(wasCorrect, isReview = false) {
   saveStats(stats);
   return { stats, leveledUp: getLevel(stats.xp) > previousLevel };
 }
+

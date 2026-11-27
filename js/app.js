@@ -2,7 +2,7 @@ import { celebrate, shake } from "./animation.js";
 import { QUIZ_LENGTH, checkAnswer, createGrammarQuestions, createQuiz, createVocabularyQuestions } from "./quizEngine.js";
 import { createReviewQuestions } from "./reviewEngine.js";
 import { getLevel, getSettings, getStats, getWrongQuestions, recordAnswer, saveSettings, saveStats, saveWrongQuestions } from "./storage.js";
-import { speak } from "./speech.js";
+import { speak, unlockSpeech } from "./speech.js";
 
 const $ = (selector) => document.querySelector(selector);
 const elements = {
@@ -191,7 +191,9 @@ function playQuestionAudio() {
   const question = state.questions[state.questionIndex];
   if (!question?.speechText) return;
   try {
-    speak(question.speechText);
+    speak(question.speechText, {
+      onError: () => showMessage("音声を再生できませんでした。端末の音量・マナーモード・英語の音声データを確認してね。", true),
+    });
     showMessage("");
   } catch (error) {
     showMessage(error.message, true);
@@ -339,6 +341,7 @@ async function initialize() {
         });
       });
     });
+    document.addEventListener("pointerdown", unlockSpeech, { once: true });
     elements.speakButton.addEventListener("click", playQuestionAudio);
     elements.soundToggle.addEventListener("click", () => {
       try {
