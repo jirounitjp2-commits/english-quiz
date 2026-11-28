@@ -38,5 +38,15 @@
   { "id": 237, "word": "enough", "meaning": "十分な", "reading": "イナフ", "example": "I have enough time.（十分な時間があります。）" },
   { "id": 238, "word": "should", "meaning": "〜すべき", "reading": "シュッド", "example": "You should sleep early.（早く寝たほうがいいよ。）" },
   { "id": 239, "word": "although", "meaning": "〜だけれども", "reading": "オールゾウ", "example": "Although I was tired, I studied.（疲れていたけれど勉強しました。）" },
-  { "id": 240, "word": "during", "meaning": "〜の間に", "reading": "デュアリング", "example": "I read books during summer vacation.（夏休みの間に本を読みます。）" }
+  { "id": 240, "word": "during", "meaning": "〜の間に", "reading": "デュアリング", "example": "I read books during summer vacation.（夏休みの間に本を読みます。）" },
+  { "id": 241, "word": "community", "meaning": "地域社会", "reading": "コミュニティ", "example": "We help people in our community.（わたしたちは地域の人たちを助けます。）" },
+  { "id": 242, "word": "energy", "meaning": "エネルギー", "reading": "エナジー", "example": "We need energy to live.（生きるためにエネルギーが必要です。）" },
+  { "id": 243, "word": "opinion", "meaning": "意見", "reading": "オピニオン", "example": "Please tell me your opinion.（あなたの意見を聞かせてください。）" },
+  { "id": 244, "word": "information", "meaning": "情報", "reading": "インフォメーション", "example": "This book has useful information.（この本には役立つ情報があります。）" },
+  { "id": 245, "word": "prepare", "meaning": "準備する", "reading": "プリペア", "example": "We prepare for the school festival.（わたしたちは文化祭の準備をします。）" },
+  { "id": 246, "word": "reduce", "meaning": "減らす", "reading": "リデュース", "example": "We can reduce waste.（わたしたちはごみを減らせます。）" },
+  { "id": 247, "word": "improve", "meaning": "上達させる、改善する", "reading": "インプルーヴ", "example": "I want to improve my English.（わたしは英語を上達させたいです。）" },
+  { "id": 248, "word": "discover", "meaning": "発見する", "reading": "ディスカバー", "example": "She discovered a new star.（彼女は新しい星を発見しました。）" },
+  { "id": 249, "word": "responsible", "meaning": "責任がある", "reading": "リスポンシブル", "example": "He is responsible for this project.（彼はこの計画を担当しています。）" },
+  { "id": 250, "word": "opportunity", "meaning": "機会", "reading": "オポチュニティ", "example": "I had an opportunity to speak English.（わたしは英語を話す機会がありました。）" }
 ]

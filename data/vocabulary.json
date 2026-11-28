@@ -68,5 +68,15 @@
   { "id": 67, "word": "city", "meaning": "都市、市", "reading": "シティ", "example": "Tokyo is a big city.（東京は大都市です。）" },
   { "id": 68, "word": "station", "meaning": "駅", "reading": "ステーション", "example": "The station is near my house.（駅は家の近くです。）" },
   { "id": 69, "word": "bike", "meaning": "自転車", "reading": "バイク", "example": "I go by bike.（自転車で行きます。）" },
-  { "id": 70, "word": "season", "meaning": "季節", "reading": "シーズン", "example": "Spring is my favorite season.（春は好きな季節です。）" }
+  { "id": 70, "word": "season", "meaning": "季節", "reading": "シーズン", "example": "Spring is my favorite season.（春は好きな季節です。）" },
+  { "id": 71, "word": "flower", "meaning": "花", "reading": "フラワー", "example": "This flower is pink.（この花はピンク色です。）" },
+  { "id": 72, "word": "window", "meaning": "窓", "reading": "ウィンドウ", "example": "Please open the window.（窓を開けてください。）" },
+  { "id": 73, "word": "garden", "meaning": "庭", "reading": "ガーデン", "example": "We have flowers in our garden.（わたしたちの庭には花があります。）" },
+  { "id": 74, "word": "letter", "meaning": "手紙", "reading": "レター", "example": "I write a letter to my friend.（わたしは友だちに手紙を書きます。）" },
+  { "id": 75, "word": "pencil", "meaning": "えんぴつ", "reading": "ペンシル", "example": "I have a new pencil.（わたしは新しいえんぴつを持っています。）" },
+  { "id": 76, "word": "table", "meaning": "テーブル", "reading": "テーブル", "example": "The book is on the table.（その本はテーブルの上にあります。）" },
+  { "id": 77, "word": "walk", "meaning": "歩く", "reading": "ウォーク", "example": "I walk to school.（わたしは歩いて学校へ行きます。）" },
+  { "id": 78, "word": "sing", "meaning": "歌う", "reading": "シング", "example": "We sing together.（わたしたちは一緒に歌います。）" },
+  { "id": 79, "word": "green", "meaning": "緑", "reading": "グリーン", "example": "The leaves are green.（葉は緑色です。）" },
+  { "id": 80, "word": "spring", "meaning": "春", "reading": "スプリング", "example": "I like spring.（わたしは春が好きです。）" }
 ]

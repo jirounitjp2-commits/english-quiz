@@ -38,5 +38,15 @@
   { "id": 137, "word": "cheerful", "meaning": "元気な、明るい", "reading": "チアフル", "example": "She is a cheerful girl.（彼女は明るい女の子です。）" },
   { "id": 138, "word": "cheap", "meaning": "安い", "reading": "チープ", "example": "This hat is cheap.（この帽子は安い。）" },
   { "id": 139, "word": "expensive", "meaning": "高価な", "reading": "イクスペンシヴ", "example": "That bag is expensive.（あのバッグは高価です。）" },
-  { "id": 140, "word": "college", "meaning": "大学", "reading": "カレッジ", "example": "My sister goes to college.（姉は大学に通っています。）" }
+  { "id": 140, "word": "college", "meaning": "大学", "reading": "カレッジ", "example": "My sister goes to college.（姉は大学に通っています。）" },
+  { "id": 141, "word": "careful", "meaning": "注意深い", "reading": "ケアフル", "example": "Be careful with that glass.（そのグラスを扱うときは気をつけてね。）" },
+  { "id": 142, "word": "friendly", "meaning": "親しみやすい", "reading": "フレンドリー", "example": "Our new teacher is friendly.（新しい先生は親しみやすいです。）" },
+  { "id": 143, "word": "usually", "meaning": "ふつうは、たいてい", "reading": "ユージュアリー", "example": "I usually get up at six.（わたしはたいてい6時に起きます。）" },
+  { "id": 144, "word": "sometimes", "meaning": "ときどき", "reading": "サムタイムズ", "example": "We sometimes play tennis.（わたしたちはときどきテニスをします。）" },
+  { "id": 145, "word": "practice", "meaning": "練習する", "reading": "プラクティス", "example": "I practice the piano every day.（わたしは毎日ピアノを練習します。）" },
+  { "id": 146, "word": "finish", "meaning": "終える", "reading": "フィニッシュ", "example": "I finish my homework before dinner.（わたしは夕食前に宿題を終えます。）" },
+  { "id": 147, "word": "borrow", "meaning": "借りる", "reading": "バロウ", "example": "I borrow books from the library.（わたしは図書館で本を借ります。）" },
+  { "id": 148, "word": "return", "meaning": "返す、戻る", "reading": "リターン", "example": "Please return the book tomorrow.（その本を明日返してください。）" },
+  { "id": 149, "word": "museum", "meaning": "博物館、美術館", "reading": "ミュージアム", "example": "We visited the museum yesterday.（わたしたちはきのう博物館を訪れました。）" },
+  { "id": 150, "word": "weather", "meaning": "天気", "reading": "ウェザー", "example": "The weather is nice today.（今日は天気がいいです。）" }
 ]
